@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Flashcard.MainPage">
+ <ContentPage.Resources>
+     <ResourceDictionary>
+         <Style TargetType="Button" >
+             <Setter Property="BackgroundColor" Value="DarkBlue"/>
+             <Setter Property="BorderColor" Value="White"/>
+             <Setter Property="BorderWidth" Value="5"/>
+             <Setter Property="TextColor" Value="Yellow"/>
+             <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+         </Style>
+     </ResourceDictionary>
+ </ContentPage.Resources>
+    <Grid BackgroundColor="Black">
+        <Grid.GestureRecognizers>
+              <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped"/>
+              <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
+        </Grid.GestureRecognizers>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="DisplayLabel" Text="BOO" Grid.Row="1" Grid.Column="1"/>
+        <BoxView Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="FlipBtn" Clicked="FlipBtn_Clicked" Text="Flip" Grid.Row="3" Grid.Column="1"/>
+
+
+    </Grid>
+
+</ContentPage>
